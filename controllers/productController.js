@@ -15,6 +15,9 @@ exports.createProduct = async (req, res) => {
     price: req.body.price,
     description: req.body.description,
     category: req.body.category,
+    quantity: req.body.quantity,
+    dimensions: req.body.dimensions,
+    imageUrl: req.body.imageUrl,
   });
 
   try {
