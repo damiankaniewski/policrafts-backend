@@ -5,18 +5,51 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  price: {
-    type: Number,
+  category: {
+    type: String,
+    enum: [
+      "3D Printing Regular",
+      "3D Printing Resin",
+      "Resin Lamps",
+      "Resin Tables",
+      "Other Resin Products",
+    ],
     required: true,
   },
   description: {
     type: String,
     required: true,
   },
-  category: {
-    type: String,
-    enum: ["1", "2", "3", "4"],
+  imageUrl: [
+    {
+      type: String,
+    },
+  ],
+  price: {
+    type: Number,
     required: true,
+  },
+  quantity: {
+    type: Number,
+    required: true,
+  },
+  dimensions: {
+    length: {
+      type: Number,
+      required: true,
+    },
+    width: {
+      type: Number,
+      required: true,
+    },
+    height: {
+      type: Number,
+      required: true,
+    },
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 
